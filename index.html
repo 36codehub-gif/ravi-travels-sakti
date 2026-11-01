@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Er. Nilkanth Patel | Software Engineer | 36codehub</title>
+  <meta name="description" content="Portfolio of Er. Nilkanth Patel - Full Stack Software Engineer, System Architect, and Founder of 36codehub.">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #0A0F1D;
+      --card-bg: #111827;
+      --card-border: #1F2937;
+      --accent-cyan: #06B6D4;
+      --accent-blue: #3B82F6;
+      --text-white: #F9FAFB;
+      --text-gray: #9CA3AF;
+      --code-bg: #030712;
+      --gradient-brand: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .code-font {
+      font-family: 'Fira Code', monospace;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 15, 29, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 16px 0;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+
+    .brand-logo .code-tag {
+      color: var(--accent-cyan);
+    }
+
+    .brand-hub {
+      background: rgba(6, 182, 212, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-gray);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--gradient-brand);
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(6, 182, 212, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(6, 182, 212, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-white);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent-cyan);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .title-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 50px;
+      color: var(--accent-cyan);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 15px;
+    }
+
+    .hero-title span {
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-gray);
+      margin-bottom: 30px;
+      max-width: 560px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* Terminal Window Mockup */
+    .code-terminal {
+      background: var(--code-bg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--card-border);
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .terminal-header {
+      background: #111827;
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #EF4444; }
+    .dot-yellow { background: #F59E0B; }
+    .dot-green { background: #10B981; }
+
+    .terminal-title {
+      color: var(--text-gray);
+      font-size: 0.8rem;
+      margin-left: auto;
+    }
+
+    .terminal-body {
+      padding: 20px;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #D1D5DB;
+    }
+
+    .keyword { color: #F472B6; }
+    .function { color: #60A5FA; }
+    .string { color: #34D399; }
+    .comment { color: #6B7280; }
+
+    /* Stats Strip */
+    .stats-strip {
+      background: var(--card-bg);
+      border-y: 1px solid var(--card-border);
+      padding: 30px 0;
+      margin: 40px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+    }
+
+    .stat-label {
+      color: var(--text-gray);
+      font-size: 0.9rem;
+    }
+
+    /* Sections General */
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+    }
+
+    .section-title p {
+      color: var(--text-gray);
+    }
+
+    /* Grid Layouts */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--card-border);
+      transition: border-color 0.3s ease;
+    }
+
+    .skill-card:hover {
+      border-color: var(--accent-cyan);
+    }
+
+    .skill-card i {
+      font-size: 2rem;
+      color: var(--accent-cyan);
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: var(--text-gray);
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--card-border);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background: #030712;
+      padding: 40px 0 20px;
+      border-top: 1px solid var(--card-border);
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--gradient-brand);
+      color: #fff;
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-wrapper">
+      <div class="brand-logo">
+        <span class="code-font code-tag">&lt;/&gt;</span>
+        <span>Er. Nilkanth Patel</span>
+        <span class="brand-hub code-font">36codehub</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
+        Get in Touch
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="title-badge">
+          <i class="fa-solid fa-code"></i> Software Engineer &amp; System Developer
+        </div>
+        
+        <h1 class="hero-title">
+          Building Scalable Software with <span>36codehub</span>
+        </h1>
+
+        <p class="hero-sub">
+          Hi, I'm <strong>Er. Nilkanth Patel</strong>. I design and engineer full-stack web applications, automated workflows, and intelligent software solutions.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fa-solid fa-laptop-code"></i> View Projects
+          </a>
+          <a href="https://github.com" target="_blank" class="btn btn-secondary">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Code Interactive Mockup -->
+      <div class="code-terminal">
+        <div class="terminal-header">
+          <div class="dot dot-red"></div>
+          <div class="dot dot-yellow"></div>
+          <div class="dot dot-green"></div>
+          <span class="terminal-title code-font">developer.ts</span>
+        </div>
+        <div class="terminal-body code-font">
+          <p><span class="keyword">const</span> developer = {</p>
+          <p style="padding-left: 20px;"><span class="keyword">name</span>: <span class="string">'Er. Nilkanth Patel'</span>,</p>
+          <p style="padding-left: 20px;"><span class="keyword">role</span>: <span class="string">'Software Engineer'</span>,</p>
+          <p style="padding-left: 20px;"><span class="keyword">platform</span>: <span class="string">'36codehub'</span>,</p>
+          <p style="padding-left: 20px;"><span class="keyword">skills</span>: [<span class="string">'TypeScript'</span>, <span class="string">'React'</span>, <span class="string">'Node.js'</span>, <span class="string">'Python'</span>],</p>
+          <p style="padding-left: 20px;"><span class="keyword">status</span>: <span class="string">'Building Next-Gen Apps'</span></p>
+          <p>};</p>
+          <p style="margin-top: 10px;"><span class="comment">// Execute building innovative products</span></p>
+          <p><span class="function">developer</span>.<span class="function">buildAwesomeSoftware</span>();</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Technical Expertise</h2>
+        <p>Core development stack and tools under 36codehub</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fa-solid fa-code"></i>
+          <h3>Frontend Development</h3>
+          <p style="color: var(--text-gray); font-size: 0.9rem;">Modern, high-performance interactive user interfaces.</p>
+          <div class="skill-tags">
+            <span class="tag">HTML5/CSS3</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">React</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">Tailwind</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-server"></i>
+          <h3>Backend &amp; APIs</h3>
+          <p style="color: var(--text-gray); font-size: 0.9rem;">Scalable server architecture and reliable API systems.</p>
+          <div class="skill-tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">REST &amp; GraphQL</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-database"></i>
+          <h3>Database &amp; Cloud</h3>
+          <p style="color: var(--text-gray); font-size: 0.9rem;">Optimized data structures and cloud deployments.</p>
+          <div class="skill-tags">
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Redis</span>
+            <span class="tag">Docker</span>
+            <span class="tag">AWS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section" style="background: rgba(255,255,255,0.01);">
+    <div class="container">
+      <div class="section-title">
+        <h2>Projects &amp; Solutions</h2>
+        <p>Software engineered by Er. Nilkanth Patel</p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div>
+            <span class="brand-hub code-font" style="margin-bottom: 10px; display: inline-block;">36codehub</span>
+            <h3>Web Automation Tools</h3>
+            <p>Custom tools designed for business logic automation, rapid data entry, and digital workflow management.</p>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">Node.js</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <span class="brand-hub code-font" style="margin-bottom: 10px; display: inline-block;">36codehub</span>
+            <h3>Hyperlocal Market Platform</h3>
+            <p>Full-stack web application connecting users with local service directories and dynamic booking systems.</p>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">React</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <span class="brand-hub code-font" style="margin-bottom: 10px; display: inline-block;">36codehub</span>
+            <h3>Invoice Generator Tool</h3>
+            <p>Lightweight client-side billing application for local businesses with instant PDF/Image export options.</p>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML/CSS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <h2 style="font-size: 1.8rem; font-weight: 800;">Er. Nilkanth Patel</h2>
+      <p style="color: var(--text-gray); margin-top: 5px;">Software Engineer | Founder of <strong>36codehub</strong></p>
+
+      <div class="social-links">
+        <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="mailto:contact@36codehub.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+
+      <p style="color: var(--text-gray); font-size: 0.85rem; margin-top: 20px;">
+        &copy; <script>document.write(new Date().getFullYear())</script> Er. Nilkanth Patel (36codehub). All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
